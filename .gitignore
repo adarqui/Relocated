@@ -1,2 +1,4 @@
 relocated
 config.json
+*.hi
+*.o
