@@ -63,14 +63,8 @@ loadJson = decode
 load file = Control.Monad.liftM loadJson (loadFile file)
 
 
--- FIXME
 sanitizeRelocator :: Relocator -> Maybe Relocator
 sanitizeRelocator r = if active r then Just r else Nothing
-{-
-sanitizeRelocator r = case r of
-						(active r) -> Just r
-						otherwise -> Nothing
-						-}
 
 
 relPoints2Pairs :: [RelPoint] -> Elapsed -> ClockTime -> IO [RelPair]
