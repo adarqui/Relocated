@@ -12,17 +12,12 @@ module Relocate (
 
 import Data.Aeson
 import Data.Text
-import Control.Concurrent
-import Control.Applicative
+import Data.Maybe
 import Control.Monad (forever, mzero, liftM, filterM, mapM)
 import qualified Data.ByteString.Lazy as BSL
-import GHC.Generics
-import Data.Maybe
-import qualified Data.List as DL
 import qualified System.Path.Glob as GLOB
 import System.Time
 import System.Posix.Files
-
 import RelocateInc
 import HMisc.Misc
 import HMisc.Stat
