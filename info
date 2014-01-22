@@ -1,0 +1,49 @@
+FROM:
+
+main
+	loop
+		findRoot
+			findRelocators
+				findRelocator
+					findRelocatorFiles
+						findGlobs
+		statRoot
+			statRootRelocator
+				statFiles
+					statFile
+				fire
+
+
+TO:
+
+main
+	loop
+		poll
+			findRoot
+				findRelocators
+					findRelocator
+						findRelocatorFiles
+							findGlobs
+			statRoot
+				statRelocators
+					statRelocator
+						statRelocatorFiles
+							statFiles
+								statFile
+			fire
+
+TO:
+
+
+main
+	loop
+		poll
+			findRoot
+				findRelocators
+					findRelocator
+						findRelocatorFiles
+							findGlobs
+							statFiles
+								statFile
+							sanitize
+			fire

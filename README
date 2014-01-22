@@ -1,0 +1,12 @@
+Relocates normal files after they havn't been modified in intervalElapsed seconds. Each relocator gets a threadpool for relocating files.
+
+
+config/install:
+
+mv config.json.example config.json
+edit it
+cp scripts/relocate.sh to the relocate path you specified in config.json
+
+make deps
+make
+make run

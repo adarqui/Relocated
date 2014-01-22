@@ -1,4 +1,5 @@
-relocated
+main
 config.json
 *.hi
 *.o
+test
