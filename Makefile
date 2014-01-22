@@ -12,3 +12,4 @@ deps:
 	cabal install glob
 	cabal install aeson
 	cabal install boundedchan
+	git clone https://github.com/adarqui/HMisc ../HMisc
