@@ -5,7 +5,7 @@
 			{
 				"Active" : true,
 				"MaxProc": 20,
-				"IntervalPoll": 3,
+				"IntervalPoll": 10,
 				"IntervalElapsed": 10,
 				"Name" : "Company1",
 				"NameSpace" : "Company1",
@@ -25,27 +25,27 @@
 				"Name" : "Company2",
 				"NameSpace" : "Company2",
 				"Class" : "Company2",
-				"Destination" : "/tmp/dest",
+				"Destination" : "/tmp/dest2",
 				"Glob" : [
 					"/tmp/incoming2/*.mov",
 					"/tmp/incoming2/*.jpg"
 				],
-				"Relocate" : "/tmp/relocate2.sh"
+				"Relocate" : "/tmp/relocate.sh"
 			},
 			{
-				"Active" : false,
-				"MaxProc" : 1,
+				"Active" : true,
+				"MaxProc": 20,
 				"IntervalPoll": 10,
-				"IntervalElapsed" : 5,
-				"Name" : "Company3",
+				"IntervalElapsed": 10,
+				"Name" : "Company1",
 				"NameSpace" : "Company3",
-				"Class" : "Company3",
-				"Destination" : "/tmp/dest",
+				"Class" : "Company1_Movies",
+				"Destination" : "/tmp/dest3",
 				"Glob" : [
-					"/tmp/incoming3/*.mov",
-					"/tmp/incoming3/*.jpg"
+					"/tmp/incoming/*.mov",
+					"/tmp/incoming/*.jpg"
 				],
-				"Relocate" : "/tmp/relocate3.sh"
+				"Relocate" : "/tmp/relocate.sh"
 			}
 		]
 	}

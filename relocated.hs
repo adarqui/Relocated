@@ -12,16 +12,26 @@ import HMisc.Stat
 import HMisc.Time
 import HMisc.Pool
 
+import Control.Concurrent.MVar
+
 main :: IO ()
 main =
 	blockSigs >>
 	load "config.json" >>=
 	dump >>=
-	mapM_ launch . mapMaybe sanitizeRelocator . relocators . root . fromJust
+	mapM_ launch . mapMaybe sanitizeRelocator . relocators . root . fromJust >>
+--	newEmptyMVar >>= \x -> takeMVar x >>
+	sleep 100000000000000000 >>
+	return ()
 
 
 launch :: Relocator -> IO ()
 launch r = do
+	thread $ launch' r
+	return ()
+
+launch' :: Relocator -> IO ()
+launch' r = do
 	input <- createBoundedPool (maxProc r) Service.doRelocate
 	loop input r
 
