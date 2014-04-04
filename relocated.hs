@@ -14,13 +14,19 @@ import HMisc.Pool
 
 import Control.Concurrent.MVar
 
+import System.Environment
+
+getConfigLoc :: [String] -> String
+getConfigLoc [] = "config.json"
+getConfigLoc argv = argv !! 0
+
 main :: IO ()
 main =
 	blockSigs >>
-	load "config.json" >>=
+	getArgs >>= \x ->
+	load (getConfigLoc x) >>=
 	dump >>=
 	mapM_ launch . mapMaybe sanitizeRelocator . relocators . root . fromJust >>
---	newEmptyMVar >>= \x -> takeMVar x >>
 	sleep 100000000000000000 >>
 	return ()
 
