@@ -81,4 +81,5 @@ isRelocatable :: FilePair -> Elapsed -> ClockTime -> IO Bool
 isRelocatable fp elapsed epoch = return(isRegularFile _stat && withinRange epoch mtime 0 elapsed)
 	where
 		_stat = stat fp
-		mtime = toCT $ modificationTime _stat
+		mtime = toCT $ statusChangeTime _stat
+--		mtime = toCT $ modificationTime _stat

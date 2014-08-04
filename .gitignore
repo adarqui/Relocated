@@ -3,3 +3,8 @@ config.json
 *.hi
 *.o
 test
+relocated
+vendor
+dist
+cabal.sandbox.config
+.cabal-sandbox
