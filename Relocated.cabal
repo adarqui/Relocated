@@ -1,0 +1,46 @@
+name:                   Relocated
+version:                0.0.2
+stability:              provisional
+license:                BSD3
+license-file:           LICENSE
+
+cabal-version:          >= 1.8
+build-type:             Simple
+
+author:                 Andrew Darqui <andrew.darqui@gmail.com>
+maintainer:             Andrew Darqui <andrew.darqui@gmail.com>
+homepage:               github.com/adarqui/Relocated
+
+category:               System
+synopsis:               Abstract
+
+
+Flag Debug
+ Description:           Enable debugging
+ Default:               False
+
+
+Library
+ hs-source-dirs:        src
+ exposed-modules:
+                        System.Relocated
+                        System.Relocated.Records
+                        System.Relocated.Config
+                        System.Relocated.Relocator
+                        System.Relocated.Exec
+                        System.Relocated.Debug
+                        System.Relocated.Misc
+
+ build-depends:         base >= 3 && <5, MissingH, Glob, BoundedChan, bytestring, aeson, unix, time, old-time, process
+ ghc-options:           -Wall -rtsopts
+ if flag(Debug)
+  cpp-options:          -D__DEBUG__
+ extensions:            CPP
+
+
+Executable              relocated
+ main-is:               relocated.hs
+ hs-source-dirs:        tools
+ build-depends:         base >= 3 && <5, Relocated
+ ghc-options:           -Wall -threaded -rtsopts -O2
+ extensions:            CPP

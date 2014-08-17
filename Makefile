@@ -1,15 +1,6 @@
 all:
-	ghc relocated.hs -threaded -fforce-recomp
+	cabal sandbox init
+	cabal-meta install
 
-clean:
-	rm -f *.o *.hi relocated
-
-run:
-	./relocated
-
-deps:
-	cabal install missingh
-	cabal install glob
-	cabal install aeson
-	cabal install boundedchan
-	git clone https://github.com/adarqui/HMisc ../HMisc
+debug:
+	cabal run relocated ./etc/config.json.example

@@ -1,0 +1,52 @@
+{
+	"_options" : {
+		"_daemon" : false
+	},
+	"_relocators" : [
+		{
+			"_active" : true,
+			"_maxProc": 1,
+			"_intervalPoll": 5,
+			"_intervalElapsed": 10,
+			"_name" : "Company1",
+			"_nameSpace" : "Company1",
+			"_class" : "Company1_Movies",
+			"_destination" : "/tmp/dest1",
+			"_glob" : [
+				"/tmp/incoming1/*.mov",
+				"/tmp/incoming1/*.jpg"
+			],
+			"_relocate" : "/tmp/relocate.sh"
+		},
+		{
+			"_active" : true,
+			"_maxProc" : 2,
+			"_intervalPoll" : 2,
+			"_intervalElapsed" : 5,
+			"_name" : "Company2",
+			"_nameSpace" : "Company2",
+			"_class" : "Company2",
+			"_destination" : "/tmp/dest2",
+			"_glob" : [
+				"/tmp/incoming2/*.mov",
+				"/tmp/incoming2/*.jpg"
+			],
+			"_relocate" : "/tmp/relocate.sh"
+		},
+		{
+			"_active" : false,
+			"_maxProc": 3,
+			"_intervalPoll": 10,
+			"_intervalElapsed": 10,
+			"_name" : "Company1",
+			"_nameSpace" : "Company3",
+			"_class" : "Company1_Movies",
+			"_destination" : "/tmp/dest3",
+			"_glob" : [
+				"/tmp/incoming3/*.mov",
+				"/tmp/incoming3/*.jpg"
+			],
+			"_relocate" : "/tmp/relocate.sh"
+		}
+	]
+}
