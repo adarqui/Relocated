@@ -24,7 +24,7 @@ step1'configs s = do
  debug $ "step1'configs: Entered => " ++ s
  config <- load s
  case config of
-  (Left err) -> putStrLn $ "FATAL ERROR PARSING CONFIG: " ++ err
+  (Left err) -> error $ "FATAL ERROR PARSING CONFIG: " ++ err
   (Right root) -> do
    debug $ "step1'configs: Config => " ++ show root
    step2'root root
